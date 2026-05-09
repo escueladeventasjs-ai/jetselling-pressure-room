@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JetSelling® Pressure Room</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="logo-j">J</div>
+
+        <div>
+            <h1>JETSELLING® PRESSURE ROOM</h1>
+            <p>Negocia. Sobrevive. Controla la presión.</p>
+        </div>
+    </div>
+
+    <div class="mode-switch">
+        <button onclick="showMode('individual')">
+            Training Room
+        </button>
+
+        <button onclick="showMode('competition')">
+            Pressure Arena
+        </button>
+    </div>
+
+</header>
+
+<main>
+
+<section id="individual" class="mode active">
+
+    <div class="panel hero">
+
+        <h2>MODO INDIVIDUAL</h2>
+
+        <p>
+            Entrena escenarios de negociación bajo presión.
+        </p>
+
+        <div class="controls">
+
+            <button class="primary" onclick="startRound()">
+                INICIAR RONDA
+            </button>
+
+            <button onclick="newPressure()">
+                LANZAR PRESIÓN
+            </button>
+
+            <button onclick="resetTimer()">
+                REINICIAR
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard">
+
+        <div class="panel timer-panel">
+
+            <h3>TIEMPO</h3>
+
+            <div id="timer">120</div>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>ESCENARIO</h3>
+
+            <div id="scenarioCard" class="card blue">
+                Pulsa "Iniciar ronda"
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>PRESIÓN ACTIVA</h3>
+
+            <div id="pressureCard" class="card green">
+                Esperando presión...
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="competition" class="mode">
+
+    <div class="panel hero">
+
+        <h2>PRESSURE ARENA</h2>
+
+        <p>
+            Crea campeonatos y rankings en directo.
+        </p>
+
+    </div>
+
+    <div class="dashboard">
+
+        <div class="panel">
+
+            <h3>CREAR CAMPEONATO</h3>
+
+            <input id="championshipName" placeholder="Nombre del campeonato">
+
+            <div class="controls">
+                <button class="primary" onclick="createChampionship()">
+                    CREAR
+                </button>
+            </div>
+
+            <div id="championshipOutput"></div>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>JUGADORES</h3>
+
+            <input id="playerName" placeholder="Nombre jugador">
+
+            <div class="controls">
+                <button onclick="addPlayer()">
+                    AÑADIR
+                </button>
+            </div>
+
+            <ul id="playersList"></ul>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>RANKING</h3>
+
+            <ol id="ranking"></ol>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
